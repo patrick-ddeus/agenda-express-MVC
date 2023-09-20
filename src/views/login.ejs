@@ -1,0 +1,82 @@
+<%- include('includes/head') %> <%- include('includes/header', {user: user}) %>
+
+<div class="container">
+  <h1 class="text-center h1 mt-4">Criar Conta / Entrar</h1>
+  <p class="fs-5 text-center mb-4">
+    Abaixo você pode criar usa conta ou entrar.
+  </p>
+
+  <main>
+    <section class="w-100 d-flex justify-content-center">
+      <div class="w-75 row mt-5">
+        <div class="col">
+          <h4 class="h4">Criar conta</h4>
+          <p class="my-2">
+            Se ainda não tem conta, use o formulário abaixo para criar.
+          </p>
+          <form method="post" action="/sign-up">
+            <input type="hidden" name="crsfToken" value="<%= crsfToken %>" />
+            <div class="mb-3">
+              <label for="emailRegister" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="emailRegister"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="passwordRegister" class="form-label">Senha</label>
+              <input
+                name="password"
+                type="password"
+                class="form-control"
+                id="passwordRegister"
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Criar minha conta
+            </button>
+          </form>
+        </div>
+
+        <div class="col">
+          <h4 class="h4">Login</h4>
+          <p class="my-2">Se já possuir conta faça login abaixo.</p>
+          <form method="post" action="/sign-in" style="margin-top: 2rem">
+            <input type="hidden" name="crsfToken" value="<%= crsfToken %>" />
+            <div class="mb-3">
+              <label for="emailLogin" class="form-label">Email</label>
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="emailLogin"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="passwordLogin" class="form-label">Senha</label>
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                id="passwordLogin"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<%- include('includes/footer') %>

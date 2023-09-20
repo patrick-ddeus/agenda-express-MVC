@@ -1,0 +1,38 @@
+{
+  "name": "luis-express-ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev:load-envs -- nodemon src/server.ts",
+    "dev:load-envs": "dotenv -e .env.development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.6.2",
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.0.0",
+    "csrf": "^3.1.0",
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "^7.3.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "helmet": "^7.0.0",
+    "mongoose": "^7.5.2",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/connect-flash": "^0.0.38",
+    "@types/express-session": "^1.17.7",
+    "@types/validator": "^13.11.1"
+  }
+}

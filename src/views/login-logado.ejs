@@ -1,0 +1,22 @@
+<%- include('includes/head') %> <%- include('includes/header', {user: user}) %>
+
+<div class="container">
+  <h1 class="text-center h1 mt-4">Olá <%- user.email %></h1>
+  <p class="fs-5 text-center mb-4">Você já está logado.</p>
+  <div class="d-flex justify-content-center">
+    <a href="/" class="text-center d-inline-block btn btn-primary"
+      >Voltar para página iniciar</a
+    >
+  </div>
+
+  <% if (errors.length !== 0) { %>
+  <div class="alert alert-danger w-75 mx-auto" role="alert">
+    <% errors.forEach(error => { %> <%= error %> <br /><% }) %>
+  </div>
+  <% } else if(success.length > 0) { %>
+  <div class="alert alert-success w-75 mx-auto" role="alert">
+    Usuário cadastrado com sucesso!
+  </div>
+  <% } %>
+</div>
+<%- include('includes/footer') %>

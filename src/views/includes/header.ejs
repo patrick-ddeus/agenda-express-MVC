@@ -1,0 +1,18 @@
+<header>
+  <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+    <div
+      class="container-fluid d-flex align-items-center justify-content-between px-5"
+    >
+      <a href="/" class="navbar-brand mb-0 align-items-center h1">Agenda</a>
+
+      <% if (user) { %>
+      <div>
+        <a href="/register/contact" class="fs-6 link-secondary pr-4">Cadastrar Contato</a>
+        <a href="/logout" class="fs-6 link-secondary">Sair</a>
+      </div>
+      <% } else {%>
+      <a href="/login/index" class="fs-6 link-secondary">Entrar</a>
+      <% } %>
+    </div>
+  </nav>
+</header>

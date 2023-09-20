@@ -1,0 +1,43 @@
+<%- include('includes/head') %> <%- include('includes/header', {user: user}) %>
+
+<div class="container w-75 mx-auto">
+  <h1 class="text-center h1 mt-4">Cadastrar Contatos</h1>
+  <p class="fs-5 text-center mb-4">Abaixo você pode cadastrar seus contatos</p>
+  <%- include('includes/message', {errors, success}) %>
+
+  <form method="post" action="/register/contact">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="name"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Sobrenome</label>
+      <input type="text" name="lastName" class="form-control" id="lastName" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" id="email" />
+    </div>
+
+    <div class="mb-3">
+      <label for="tel" class="form-label">Telefone</label>
+      <input
+        type="tel"
+        name="tel"
+        class="form-control"
+        id="tel"
+        pattern="(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include('includes/footer') %>

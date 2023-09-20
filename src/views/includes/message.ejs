@@ -1,0 +1,9 @@
+<% if (errors.length !== 0) { %>
+  <div class="alert alert-danger w-100 mx-auto" role="alert">
+    <% errors.forEach(error => { %> <%= error %> <br /><% }) %>
+  </div>
+  <% } else if(success.length > 0) { %>
+  <div class="alert alert-success w-100 mx-auto" role="alert">
+    <%= success %>
+  </div>
+  <% } %>
